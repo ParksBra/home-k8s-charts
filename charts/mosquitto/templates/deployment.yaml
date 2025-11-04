@@ -17,9 +17,9 @@ spec:
       - name: mosquitto
         image: eclipse-mosquitto:stable
         ports:
-        - containerPort: {{ .Values.mosquitto.tlsPort }}
+        - containerPort: 8883
           name: mqtt-tls
-        - containerPort: {{ .Values.mosquitto.websocketPort }}
+        - containerPort: 9001
           name: mqtt-websocket
         volumeMounts:
         - mountPath: /mosquitto/config/mosquitto.conf
