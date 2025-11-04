@@ -9,5 +9,11 @@ zigbee2mqtt:
     data:
       size: 16Gi
 
+akri:
+  kubernetesDistro: k8s
+  udev:
+    discovery:
+      enabled: true
+
 zfs:
   poolName: zfspv-pool
