@@ -1,10 +1,22 @@
 apiVersion: v1
 entries:
+  akri:
+  - apiVersion: v2
+    appVersion: 0.13.8
+    created: "2025-11-03T19:08:53.8928969-08:00"
+    description: A Helm chart for Akri releases
+    digest: 7e0143157338f7753d9b5b882efc0edc5f43e4d5483604b8544c05008f35afba
+    icon: https://raw.githubusercontent.com/project-akri/akri-docs/main/art/icon/akri-icon-light.svg
+    name: akri
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/charts/akri-0.13.8.tgz
+    version: 0.13.8
   homeassistant:
   - apiVersion: v2
-    created: "2025-11-03T19:01:08.9392005-08:00"
+    created: "2025-11-03T19:08:53.8934854-08:00"
     description: A Helm chart for Home Assistant
-    digest: d41cf72c1a392800b7ba773820d85304434f7d1a2df130d27aa5c6960633ba54
+    digest: 51af185ff48d5285ade1bcef490578e958f9da1e23ecdd6171f2887f4aaddfa2
     name: homeassistant
     type: application
     urls:
@@ -12,8 +24,11 @@ entries:
     version: 0.1.0
   homeassistant-environment:
   - apiVersion: v2
-    created: "2025-11-03T19:01:08.9374854-08:00"
+    created: "2025-11-03T19:08:53.8912123-08:00"
     dependencies:
+    - name: akri
+      repository: https://project-akri.github.io/akri
+      version: '>=0.13.8'
     - name: homeassistant
       repository: file://./charts/homeassistant
       version: 0.1.0
@@ -24,7 +39,7 @@ entries:
       repository: file://./charts/zigbee2mqtt
       version: 0.1.0
     description: A Helm chart for a MQTT brokered Home Assistant environment
-    digest: 4bfc151c35ae403b6549e0b28e22eaffc5086f03ee38472343941424b3f09074
+    digest: de997a7aaebb2e6b6ae28af9a05a6eb56608ae9bbffcc66234e657533ab64646
     name: homeassistant-environment
     type: application
     urls:
@@ -32,9 +47,9 @@ entries:
     version: 0.1.0
   mosquitto:
   - apiVersion: v2
-    created: "2025-11-03T19:01:08.9392005-08:00"
+    created: "2025-11-03T19:08:53.8945908-08:00"
     description: A Helm chart for Mosquitto MQTT Broker
-    digest: 0ffc854c4df0ad1fa0b36ef272e50ec60c90be834cb1cc2e2bc1e46bec82532b
+    digest: af67040ee85633547efe2b52d097a7ecd18b504c9f74473a481565ae96ed6a8f
     name: mosquitto
     type: application
     urls:
@@ -42,16 +57,16 @@ entries:
     version: 0.1.0
   zigbee2mqtt:
   - apiVersion: v2
-    created: "2025-11-03T19:01:08.9402218-08:00"
+    created: "2025-11-03T19:08:53.8951603-08:00"
     dependencies:
     - name: akri
       repository: https://project-akri.github.io/akri
       version: '>=0.13.8'
     description: A Helm chart for Zigbee2MQTT
-    digest: aeb5006fa20472687587eb096d9a8c5b15e2f560f54ab378b467bc3fe1ae01c3
+    digest: 7eaeb329fe8c9c9ff2de73929c13873f50648828bf3cd7799d3fe7dbddac1c74
     name: zigbee2mqtt
     type: application
     urls:
     - https://raw.githubusercontent.com/ParksBra/home-k8s/initial_work/charts/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-03T19:01:08.9359706-08:00"
+generated: "2025-11-03T19:08:53.8882988-08:00"
