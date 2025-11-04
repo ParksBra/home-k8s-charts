@@ -6,4 +6,4 @@ type: application
 dependencies:
   - name: akri
     version: ">=0.13.8"
-    repository: https://project-akri.github.io/akri/
+    repository: https://project-akri.github.io/akri
