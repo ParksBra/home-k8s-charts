@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zigbee2mqtt-service
+  namespace: homeassistant
+spec:
+  selector:
+    app: zigbee2mqtt-label
+  ports:
+  - name: zigbee2mqtt
+    port: {{ .Values.zigbee2mqtt.service.port }}
+    targetPort: zigbee2mqtt-web
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: zigbee2mqtt-ingress
+  namespace: homeassistant
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: {{ .Values.zigbee2mqtt.ingress.host }}
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: zigbee2mqtt-service
+            port:
+              number: {{ .Values.zigbee2mqtt.service.port }}

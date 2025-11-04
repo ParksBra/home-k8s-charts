@@ -1,0 +1,8 @@
+apiVersion: v2
+name: zigbee2mqtt
+description: A Helm chart for Zigbee2MQTT
+version: 0.1.0
+dependencies:
+- name: akri
+  version: latest
+  repository: https://project-akri.github.io/akri/

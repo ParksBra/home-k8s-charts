@@ -1,0 +1,12 @@
+apiVersion: akri.sh/v0
+kind: Configuration
+metadata:
+  name: akri-radio
+spec:
+  capacity: 1
+  discoveryHandler:
+    discoveryDetails: |
+      groupRecursive: true
+      udevRules:
+      - ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60" # Silicon Labs CP210x UART Bridge
+    name: udev

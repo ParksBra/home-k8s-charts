@@ -1,0 +1,13 @@
+homeassistant:
+  ingress:
+    host: ha.parkl.ee
+    servicePort: 443
+zigbee2mqtt:
+  ingress:
+    host: z2m.parkl.ee
+    servicePort: 443
+akri:
+  kubernetesDistro: k8s
+  udev:
+    discovery:
+      enabled: true
