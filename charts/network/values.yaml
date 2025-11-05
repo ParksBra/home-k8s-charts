@@ -1,3 +1,13 @@
 network:
+  ingress:
+    host: your-domain.com
   certmanager:
-    letsencryptEmail: your-email@example.com
+    clusterissuer:
+      acme:
+        email: your-email@example.com
+      dns01:
+        provider: cloudflare
+        cloudflare:
+          email: your-cloudflare-email@example.com
+          apiTokenSecretName: cloudflare-api-key-secret
+          apiTokenSecretKey: api-key

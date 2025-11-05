@@ -5,10 +5,14 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: {{ .Values.network.certmanager.letsencryptEmail }}
+    email: {{ .Values.network.certmanager.acme.email }}
     privateKeySecretRef:
-      name: letsencrypt-clusterissuer-secret
+      key: private-key
+      name: cluster-issuer-letsencrypt-key
     solvers:
-    - http01:
-        ingress:
-          ingressClassName: nginx
+    - dns01:
+      {{ .Values.network.certmanager.clusterissuer.dns01.provider }}:
+        email: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.email }}
+        apiTokenSecretRef:
+          name: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiTokenSecretName }}
+          key: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiKTokenSecretKey }}
