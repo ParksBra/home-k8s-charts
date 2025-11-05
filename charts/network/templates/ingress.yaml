@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: mosquitto
+  name: network-ingress
   namespace: {{ .Release.Namespace }}
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
@@ -10,7 +10,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - {{ .Values.network.ingress.host }}
+    - "{{ .Values.network.ingress.host }}"
     secretName: external-cert
   rules:
   - host: "{{ .Values.homeassistant.ingress.subDomain }}.{{ .Values.network.ingress.host }}"
