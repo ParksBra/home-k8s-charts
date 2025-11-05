@@ -1,5 +1,5 @@
 apiVersion: cert-manager.io/v1
-kind: CertificateIssuer
+kind: ClusterIssuer
 metadata:
   name: letsencrypt
 spec:
@@ -7,8 +7,8 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .Values.network.certmanager.letsencryptEmail }}
     privateKeySecretRef:
-      name: letsencrypt
+      name: letsencrypt-secret
     solvers:
     - http01:
         ingress:
-          class: traefik 
+          ingressClassName: nginx
