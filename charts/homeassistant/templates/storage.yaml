@@ -18,7 +18,7 @@ metadata:
   name: homeassistant-pv-time
   namespace: {{ .Release.Namespace }}
   labels:
-    app: homeassistant-label
+    app.kubernetes.io/name: homeassistant-label
 spec:
   accessModes:
     - ReadWriteOnce
@@ -33,7 +33,7 @@ metadata:
   name: homeassistant-pv-config
   namespace: {{ .Release.Namespace }}
   labels:
-    app: homeassistant-label
+    app.kubernetes.io/name: homeassistant-label
 spec:
   accessModes:
     - ReadWriteOnce

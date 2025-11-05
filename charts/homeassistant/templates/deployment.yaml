@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: homeassistant-label
+      app.kubernetes.io/name: homeassistant-label
   template:
     metadata:
       labels:
-        app: homeassistant-label
+        app.kubernetes.io/name: homeassistant-label
     spec:
       hostNetwork: true
       containers:

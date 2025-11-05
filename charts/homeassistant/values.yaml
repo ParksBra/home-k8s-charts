@@ -1,7 +1,7 @@
 homeassistant:
   ingress:
-    host: homeassistant.local
     servicePort: 443
+    subDomain: ha
   volume:
     data:
       size: 16Gi

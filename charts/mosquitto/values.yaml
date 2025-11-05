@@ -1,6 +1,6 @@
 mosquitto:
   ingress:
-    host: mqtt.parkl.ee
+    subDomain: mqtt
     websocketPort: 9001
     tlsPort: 8883
   account:
