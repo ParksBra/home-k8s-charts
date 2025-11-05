@@ -41,7 +41,7 @@ spec:
           name: mosquitto-password
       - name: certs
         secret:
-          secretName: mosquitto-certs
+          secretName: external-cert
       - name: data
         persistentVolumeClaim:
           claimName: mosquitto-pv-data

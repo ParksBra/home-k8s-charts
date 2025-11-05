@@ -7,7 +7,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .Values.network.certmanager.letsencryptEmail }}
     privateKeySecretRef:
-      name: letsencrypt-secret
+      name: letsencrypt-clusterissuer-secret
     solvers:
     - http01:
         ingress:
