@@ -11,8 +11,8 @@ spec:
       name: cluster-issuer-letsencrypt-key
     solvers:
     - dns01:
-      {{ .Values.network.certmanager.clusterissuer.dns01.provider }}:
-        email: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.email }}
-        apiTokenSecretRef:
-          name: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiTokenSecretName }}
-          key: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiKTokenSecretKey }}
+        {{ .Values.network.certmanager.clusterissuer.dns01.provider }}:
+          email: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.email }}
+          apiTokenSecretRef:
+            name: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiTokenSecretName }}
+            key: {{ .Values.network.certmanager.clusterissuer.dns01.cloudflare.apiKTokenSecretKey }}
