@@ -49,6 +49,15 @@ entries:
     version: 0.1.0
   network:
   - apiVersion: v2
+    created: "2025-11-06T02:13:06.482920919Z"
+    description: A Helm chart for network components
+    digest: 15efe25d1d16eda2872caeb2e7d2bd0ee85aed06c7bff36fad8451c16efd4389
+    name: network
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/network-0.1.8/network-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
     created: "2025-11-06T01:41:09.436653139Z"
     description: A Helm chart for network components
     digest: f0f75bd15caeeb8c0136de5d5587fcffe523cd64fce89b4a734724302b40920f
@@ -130,4 +139,4 @@ entries:
     urls:
     - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.0/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-06T01:41:09.436687894Z"
+generated: "2025-11-06T02:13:06.482960493Z"
