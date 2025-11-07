@@ -4,4 +4,5 @@ metadata:
   name: homeassistant-configuration
   namespace: {{ .Release.Namespace }}
 data:
-  configuration.yaml: {{ .Values.homeassistant.config.configuration | indent 4 }}
+  configuration.yaml: |
+    {{ .Values.homeassistant.config.configuration | indent 4 }}
