@@ -8,8 +8,8 @@ metadata:
 spec:
   capacity: 1
   discoveryHandler:
-    discoveryDetails:
+    discoveryDetails: |+
       groupRecursive: true
       udevRules:
-      - ATTRS{idVendor}=="{{ .Values.zigbee2mqtt.radio.vendorId }}", ATTRS{idProduct}=="{{ .Values.zigbee2mqtt.radio.productId }}"
+      - 'ATTRS{idVendor}=="{{ .Values.zigbee2mqtt.radio.vendorId }}", ATTRS{idProduct}=="{{ .Values.zigbee2mqtt.radio.productId }}"'
     name: udev
