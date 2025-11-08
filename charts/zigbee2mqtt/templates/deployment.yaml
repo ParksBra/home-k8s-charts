@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: zigbee2mqtt
-        image: ghcr.io/koenkk/zigbee2mqtt:stable
+        image: ghcr.io/koenkk/zigbee2mqtt:latest
         ports:
         - containerPort: 8080
           name: z2m-web
