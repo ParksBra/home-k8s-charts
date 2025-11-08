@@ -75,6 +75,15 @@ entries:
     version: 0.1.0
   mosquitto:
   - apiVersion: v2
+    created: "2025-11-08T09:18:49.453311671Z"
+    description: A Helm chart for Mosquitto MQTT Broker
+    digest: da2c0f9daf44a92567c20ecdc7e3746e5485e972dfb5126c345e6b2c0f8c6869
+    name: mosquitto
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/mosquitto-0.1.7/mosquitto-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     created: "2025-11-08T09:09:44.065145009Z"
     description: A Helm chart for Mosquitto MQTT Broker
     digest: 4ec3241d4e10f5f17a5f8b449eea41cbf22afa8dca27926ad4bd504b9071078c
@@ -355,4 +364,4 @@ entries:
     urls:
     - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.0/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-08T09:09:44.065271234Z"
+generated: "2025-11-08T09:18:49.453410305Z"
