@@ -10,7 +10,10 @@ data:
     log_dest stdout
 
     password_file /mosquitto/config/password.txt
-    
+
+    # MQTT listener
+    listener {{ .Values.mosquitto.ingress.port }}
+    protocol mqtt
     # MQTTS listener
     listener {{ .Values.mosquitto.ingress.tlsPort }}
     protocol mqtt
