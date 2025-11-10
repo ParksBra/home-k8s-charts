@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   homeassistant:
   - apiVersion: v2
+    created: "2025-11-10T23:29:35.70096209Z"
+    description: A Helm chart for Home Assistant
+    digest: 7c7a9ccec7cccc97189bd0558e96a9af844543a37295518c11972877bcca066b
+    name: homeassistant
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/homeassistant-0.1.13/homeassistant-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v2
     created: "2025-11-10T23:00:16.076395535Z"
     description: A Helm chart for Home Assistant
     digest: 9211ff990d5a28b40b0cc961a73bbfc7eae31d84dd268e3e12f13f4de9c910bc
@@ -110,6 +119,15 @@ entries:
     - https://github.com/ParksBra/home-k8s/releases/download/homeassistant-0.1.0/homeassistant-0.1.0.tgz
     version: 0.1.0
   mosquitto:
+  - apiVersion: v2
+    created: "2025-11-10T23:29:35.921680308Z"
+    description: A Helm chart for Mosquitto MQTT Broker
+    digest: 39a1f692d5fcc61e0b2f70433267bc9482f4429011b8cf693d1ac79a83d02b07
+    name: mosquitto
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/mosquitto-0.1.9/mosquitto-0.1.9.tgz
+    version: 0.1.9
   - apiVersion: v2
     created: "2025-11-10T20:11:09.273096835Z"
     description: A Helm chart for Mosquitto MQTT Broker
@@ -320,6 +338,15 @@ entries:
     version: 0.1.0
   zigbee2mqtt:
   - apiVersion: v2
+    created: "2025-11-10T23:29:36.169040535Z"
+    description: A Helm chart for Zigbee2MQTT
+    digest: 69fe969c8b3b5faa366e64a83abdebedc6e11b2f9ecf42f745c1b6eeaa13579f
+    name: zigbee2mqtt
+    type: application
+    urls:
+    - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.12/zigbee2mqtt-0.1.12.tgz
+    version: 0.1.12
+  - apiVersion: v2
     created: "2025-11-10T20:11:09.447395632Z"
     description: A Helm chart for Zigbee2MQTT
     digest: 78d9bbfacc2f06382e56abf44773235c1c7253e5ff0cf3a931a6f21df2e71e80
@@ -418,4 +445,4 @@ entries:
     urls:
     - https://github.com/ParksBra/home-k8s/releases/download/zigbee2mqtt-0.1.0/zigbee2mqtt-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-10T23:00:16.076491423Z"
+generated: "2025-11-10T23:29:36.16926921Z"
