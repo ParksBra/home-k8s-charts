@@ -40,7 +40,7 @@ spec:
             name: homeassistant-pv-time
             readOnly: true
       hostNetwork: true
-      dnsPolicty: ClusterFirstWithHostNet
+      dnsPolicy: ClusterFirstWithHostNet
       restartPolicy: Always
       volumes:
         - name: homeassistant-configuration
