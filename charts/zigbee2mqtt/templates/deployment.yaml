@@ -21,7 +21,7 @@ spec:
           name: z2m-web
         volumeMounts:
         - mountPath: /app/data/
-          name: data
+          name: zigbee2mqtt-data
         {{- if .Values.zigbee2mqtt.radio.akri.enabled }}
         resources:
           limits:
@@ -32,6 +32,6 @@ spec:
       dnsPolicty: ClusterFirst
       restartPolicy: Always
       volumes:
-      - name: data
+      - name: zigbee2mqtt-data
         persistentVolumeClaim:
-          claimName: zigbee2mqtt-pv-data
+          claimName: zigbee2mqtt-pvc-data

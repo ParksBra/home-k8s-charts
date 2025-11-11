@@ -26,26 +26,26 @@ spec:
         volumeMounts:
         - mountPath: /mosquitto/config/mosquitto.conf
           subPath: mosquitto.conf
-          name: config
+          name: mosquitto-config-map
         - mountPath: /mosquitto/certs/
-          name: certs
+          name: mosquitto-cert
         - mountPath: /mosquitto/data/
-          name: data
+          name: mosquitto-data
         - mountPath: /mosquitto/config/password.txt
           subPath: password.txt
           name: mosquitto-password
       dnsPolicty: ClusterFirst
       restartPolicy: Always
       volumes:
-      - name: config
+      - name: mosquitto-config-map
         configMap:
-          name: mosquitto-config
+          name: mosquitto-config-map
       - name: mosquitto-password
         configMap:
           name: mosquitto-password
-      - name: certs
+      - name: mosquitto-cert
         secret:
           secretName: external-cert
-      - name: data
+      - name: mosquitto-data
         persistentVolumeClaim:
-          claimName: mosquitto-pv-data
+          claimName: mosquitto-pvc-data
