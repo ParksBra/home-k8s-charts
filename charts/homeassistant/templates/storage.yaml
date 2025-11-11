@@ -10,17 +10,33 @@ parameters:
   dedup: "off"
   fstype: "zfs"
   poolname: {{ .Values.zfs.poolName }}
-reclaimPolicy: {{ .Values.homeassistant.storage.reclaimPolicy }}
+reclaimPolicy: Retain
 provisioner: zfs.csi.openebs.io
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homeassistant-pv-time
+spec:
+  capacity:
+    storage: {{ .Values.homeassistant.volume.time.size }}
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: homeassistant-zfs-sc
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: zfs.csi.openebs.io
+    volumeHandle: homeassistant-pv-time
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: homeassistant-pv-time
+  name: homeassistant-pvc-time
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: homeassistant-label
 spec:
+  volumeName: homeassistant-pv-time
   accessModes:
     - ReadWriteOnce
   storageClassName: homeassistant-zfs-sc
@@ -29,13 +45,29 @@ spec:
       storage: {{ .Values.homeassistant.volume.time.size }}
 ---
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homeassistant-pv-data
+spec:
+  capacity:
+    storage: {{ .Values.homeassistant.volume.data.size }}
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: homeassistant-zfs-sc
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: zfs.csi.openebs.io
+    volumeHandle: homeassistant-pv-data
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: homeassistant-pv-config
+  name: homeassistant-pvc-data
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: homeassistant-label
 spec:
+  volumeName: homeassistant-pv-data
   accessModes:
     - ReadWriteOnce
   storageClassName: homeassistant-zfs-sc

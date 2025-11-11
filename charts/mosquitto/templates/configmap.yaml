@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mosquitto-config
+  name: mosquitto-config-map
   namespace: {{ .Release.Namespace }}
 data:
   mosquitto.conf: |

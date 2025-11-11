@@ -33,23 +33,23 @@ spec:
         volumeMounts:
           - mountPath: /config/configuration.yaml
             subPath: configuration.yaml
-            name: homeassistant-configuration
+            name: homeassistant-config-map
           - mountPath: /config
-            name: homeassistant-pv-config
+            name: homeassistant-config
           - mountPath: /etc/localtime
-            name: homeassistant-pv-time
+            name: homeassistant-time
             readOnly: true
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
       restartPolicy: Always
       volumes:
-        - name: homeassistant-configuration
+        - name: homeassistant-config-map
           configMap:
-            name: homeassistant-configuration
-        - name: homeassistant-pv-config
+            name: homeassistant-config-map
+        - name: homeassistant-config
           persistentVolumeClaim:
-            claimName: homeassistant-pv-config
-        - name: homeassistant-pv-time
+            claimName: homeassistant-pvc-config
+        - name: homeassistant-time
           persistentVolumeClaim:
-            claimName: homeassistant-pv-time
+            claimName: homeassistant-pvc-time
             readOnly: true
