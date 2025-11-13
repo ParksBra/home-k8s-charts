@@ -25,11 +25,3 @@ data:
     # WS Listener
     listener 9001
     protocol websockets
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mosquitto-password
-  namespace: {{ .Release.Namespace }}
-data:
-  password.txt: "{{ .Values.mosquitto.account.username }}:{{ .Values.mosquitto.account.password }}"

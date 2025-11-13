@@ -33,16 +33,16 @@ spec:
           name: mosquitto-data
         - mountPath: /mosquitto/config/password.txt
           subPath: password.txt
-          name: mosquitto-password
+          name: mosquitto-password-file
       dnsPolicty: ClusterFirst
       restartPolicy: Always
       volumes:
       - name: mosquitto-config-map
         configMap:
           name: mosquitto-config-map
-      - name: mosquitto-password
-        configMap:
-          name: mosquitto-password
+      - name: mosquitto-password-file
+        secret:
+          secretName: mosquitto-password-file
       - name: mosquitto-cert
         secret:
           secretName: external-cert
